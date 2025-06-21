@@ -1,3 +1,4 @@
+import os
 from kidney_disease_classification import logger
 from kidney_disease_classification.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
 from kidney_disease_classification.pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
@@ -21,6 +22,8 @@ except Exception as e:
 
 
 STAGE_NAME = "Prepare base model"
+if __name__ == "__main__":
+    os.makedirs("artifacts/prepare_base_model", exist_ok=True)  # ✅ Add this if nothing else works
 
 
 try: 

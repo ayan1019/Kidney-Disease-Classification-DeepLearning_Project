@@ -5,11 +5,14 @@ from zipfile import ZipFile
 import tensorflow as tf
 from pathlib import Path
 from kidney_disease_classification.entity.config_entity import PrepareBaseModelConfig
+from kidney_disease_classification import logger
 
 
 class PrepareBaseModel:
     def __init__(self, config: PrepareBaseModelConfig):
         self.config = config
+        os.makedirs(self.config.root_dir, exist_ok=True) # Create directory for DVC
+        logger.info(f"Created directory: {self.config.root_dir}")
 
     
     def get_base_model(self):
@@ -61,6 +64,8 @@ class PrepareBaseModel:
             freeze_till=None,
             learning_rate=self.config.params_learning_rate
         )
+
+        os.makedirs(self.config.updated_base_model_path.parent, exist_ok=True)
 
         self.save_model(path=self.config.updated_base_model_path, model=self.full_model)
 
