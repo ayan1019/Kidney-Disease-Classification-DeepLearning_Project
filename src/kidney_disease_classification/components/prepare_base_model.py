@@ -11,9 +11,6 @@ from kidney_disease_classification import logger
 class PrepareBaseModel:
     def __init__(self, config: PrepareBaseModelConfig):
         self.config = config
-        os.makedirs(self.config.root_dir, exist_ok=True) # Create directory for DVC
-        logger.info(f"Created directory: {self.config.root_dir}")
-
     
     def get_base_model(self):
         self.model = tf.keras.applications.vgg16.VGG16(
@@ -65,7 +62,6 @@ class PrepareBaseModel:
             learning_rate=self.config.params_learning_rate
         )
 
-        os.makedirs(self.config.updated_base_model_path.parent, exist_ok=True)
 
         self.save_model(path=self.config.updated_base_model_path, model=self.full_model)
 

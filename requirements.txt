@@ -16,5 +16,5 @@ scipy
 Flask
 Flask-Cors
 gdown
-setuptools
+setuptools==68.2.2
 -e .

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ayan/Kidney-Disease-Classification-DeepLearning_Project/mlruns/0/16974d5dfb1e4f038c81443f977939b2/artifacts
+end_time: 1750715036775
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 16974d5dfb1e4f038c81443f977939b2
+run_name: secretive-donkey-506
+run_uuid: 16974d5dfb1e4f038c81443f977939b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750715030432
+status: 3
+tags: []
+user_id: ayan

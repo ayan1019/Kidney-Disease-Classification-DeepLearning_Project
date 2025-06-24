@@ -85,3 +85,8 @@ class Training:
             path=self.config.trained_model_path,
             model=self.model
         )
+
+
+        # saving model for prediction pipeline
+        os.makedirs("model", exist_ok=True)
+        self.model.save("model/model.h5")

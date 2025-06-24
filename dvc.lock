@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python 
+      src/kidney_disease_classification/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 1c3f6cede50eb8fa8e0739c8f2f7d0ec
+      size: 564
+    - path: 
+        src/kidney_disease_classification/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 9215358886e88839e66a34dd5b1a52d1
+      size: 928
+    outs:
+    - path: artifacts/data_ingestion/Kidney CT Scan
+      hash: md5
+      md5: fad29aef2e2d8e0ca2f64f66d8a31b77.dir
+      size: 961122129
+      nfiles: 7361
